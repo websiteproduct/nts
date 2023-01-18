@@ -1,0 +1,123 @@
+$lgray: #373D45;
+$dgray: #2B3038;
+$primary-color: #FFD83C;
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.heading,h1,h2,h3,h4,h5,h6 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+.heading {
+    margin-bottom: 50px;
+    color: $primary-color;
+}
+
+.section {
+    padding: 90px 0;
+}
+
+.text-primary {
+    color: $primary-color !important;
+}
+
+.first-screen {
+    height: 100vh;
+    display: flex;
+    justify-content: stretch;
+    flex-direction: column;
+}
+
+.header {
+    background-color: $lgray;
+    padding: 30px 0;
+    color: #fff;
+}
+
+.header-contacts {
+    display: flex;
+    gap: 25px;
+
+    a {
+        color: $primary-color;
+    }
+}
+
+.header-social-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    svg {
+        fill: #E0E0E0;
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.menu-container {
+    background-color: $dgray;
+}
+
+.main-menu {
+    display: flex;
+
+    a {
+        padding: 15px;
+        color: #fff;
+
+        &:hover {
+            background-color: lighten($dgray, 2%);
+            color: $primary-color;
+        }
+    }
+}
+
+.main-picture {
+    background-image: url(../images/main-picture.jpg);
+    background-repeat: no-repeat;
+    flex: 1;
+}
+
+#services,
+#about-us,
+.footer {
+    background-color: $lgray;
+}
+
+.service-item {
+    text-align: center;
+    background-color: $dgray;
+}
+
+.service-image-holder {
+    height: 250px;
+    background-color: #DBDCDD;
+}
+
+.service-title {
+    color: #DBDCDD;
+    padding: 20px 5px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#reviews {
+    background-color: $dgray;
+}
