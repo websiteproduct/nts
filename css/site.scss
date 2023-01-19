@@ -121,3 +121,18 @@ a:hover {
 #reviews {
     background-color: $dgray;
 }
+
+.footer {
+    color: #BDBDBD;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 0;
+}
+
+.footer-right-container {
+    display: flex;
+    gap: 90px;
+}
