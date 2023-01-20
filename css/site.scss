@@ -373,14 +373,27 @@ a:hover {
 .service-item {
     text-align: center;
     background-color: $dgray;
+    margin: 0 30px;
+
+    @media (min-width: 768px) {
+        margin: 0;
+    }
 }
 
 .service-image-holder {
-    height: 240px;
+    height: 200px;
     background-color: #dbdcdd;
     overflow: hidden;
 
+    @media (min-width: 768px) {
+        height: 150px;
+    }
+
     @media (min-width: 1024px) {
+        height: 210px;
+    }
+
+    @media (min-width: 1200px) {
         height: 280px;
     }
 
@@ -392,20 +405,37 @@ a:hover {
 
 .service-title {
     color: #dbdcdd;
-    padding: 20px 5px;
-    font-size: 1.25rem;
     font-weight: 500;
+    padding: 8px 5px;
+
+    @media (min-width: 768px) {
+        font-size: .8rem;
+        padding: 10px 5px;
+    }
+
+    @media (min-width: 1200px) {
+        font-size: 1.25rem;
+        padding: 20px 5px;
+    }
 }
 
 #benefits {
     background-color: $primary-color;
     position: relative;
-    padding-top: 55px;
+    padding-top: 25px;
     padding-bottom: 0;
+
+    @media (min-width: 1024px) {
+        padding-top: 55px;
+    }
 }
 
 .benefit-padding {
-    padding-bottom: 90px;
+    // padding-bottom: 90px;
+
+    @media (min-width: 1024px) {
+        padding-bottom: 90px;
+    }
 }
 
 .benefit-item {
