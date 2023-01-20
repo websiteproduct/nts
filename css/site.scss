@@ -1,23 +1,42 @@
-$lgray: #373D45;
-$dgray: #2B3038;
-$primary-color: #FFD83C;
-
+$lgray: #373d45;
+$dgray: #2b3038;
+$primary-color: #ffd83c;
 
 * {
     box-sizing: border-box;
 }
 
 html {
-    font-size: 16px;
+    font-size: 14px;
+
+    @media (min-width: 1024px) {
+        font-size: 16px;
+    }
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
-.heading,h1,h2,h3,h4,h5,h6,
+.heading,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .h-font {
-    font-family: 'Fira Sans Condensed', sans-serif;
+    font-family: "Fira Sans Condensed", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
 }
 
 a,
@@ -27,12 +46,32 @@ a:hover {
 }
 
 .heading {
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     color: $primary-color;
+
+    @media (min-width: 1024px) {
+        margin-bottom: 50px;
+    }
+
+    h2 {
+        font-size: 1.85rem;
+
+        @media (min-width: 1024px) {
+            font-size: 2.5rem;
+        }
+    }
 }
 
 .section {
-    padding: 90px 0;
+    padding: 30px 0;
+
+    @media (min-width: 1024px) {
+        padding: 60px 0;
+    }
+
+    @media (min-width: 1200px) {
+        padding: 90px 0;
+    }
 }
 
 .text-primary {
@@ -41,22 +80,35 @@ a:hover {
 
 .btn {
     border-radius: 0 !important;
-    font-family: 'Fira Sans Condensed', sans-serif;
+    font-family: "Fira Sans Condensed", sans-serif;
+}
+
+.image-holder {
+    img {
+        max-width: 100%;
+    }
 }
 
 .btn-primary {
     background-color: $primary-color !important;
     border-color: $primary-color !important;
-    color: #1F1F1F !important;
-    font-size: 20px;
+    color: #1f1f1f !important;
+    font-size: 1rem;
     font-weight: 500;
+
+    @media (min-width: 1024px) {
+        font-size: 1.25rem;
+    }
 }
 
 .first-screen {
-    height: 100vh;
     display: flex;
     justify-content: stretch;
     flex-direction: column;
+
+    @media (min-width: 1200px) {
+        height: 100vh;
+    }
 }
 
 .header {
@@ -65,12 +117,33 @@ a:hover {
     color: #fff;
 }
 
-.header-contacts {
+.header-container {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    img {
+        max-width: 100%;
+
+        @media (min-width: 1024px) {
+            max-width: 80%;
+        }
+    }
+}
+
+.header-contacts {
+    display: none;
     gap: 25px;
 
     a {
         color: $primary-color;
+    }
+
+    @media (min-width: 1024px) {
+        display: flex;
     }
 }
 
@@ -109,16 +182,28 @@ a:hover {
     gap: 15px;
 
     svg {
-        fill: #E0E0E0;
+        fill: #e0e0e0;
         width: 16px;
         height: 16px;
     }
 }
 
-.header-contacts-group {
-    div:not(:last-child) {
-        margin-bottom: 10px;
+.social-icon-link:hover {
+    svg {
+        fill: $primary-color;
     }
+}
+
+.phones-container {
+    margin-bottom: 20px;
+}
+
+.header-contacts .header-phone-link {
+    color: #fff;
+}
+
+.phones div:not(:last-child) {
+    margin-bottom: 10px;
 }
 
 .menu-container {
@@ -126,7 +211,8 @@ a:hover {
 }
 
 .main-menu {
-    display: flex;
+    display: none;
+    flex-direction: column;
 
     a {
         padding: 15px;
@@ -137,12 +223,114 @@ a:hover {
             color: $primary-color;
         }
     }
+
+    @media (min-width: 1024px) {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &.show {
+        display: flex;
+    }
+}
+
+.btn-burger {
+    border: 0;
+    background-color: rgba(255, 255, 255, 0);
+    margin: 15px 0;
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    gap: 15px;
+
+    @media (min-width: 1024px) {
+        display: none;
+    }
+
+    svg {
+        width: 24px;
+        fill: #fff;
+    }
 }
 
 .main-picture {
     background-image: url(../images/main-picture.jpg);
     background-repeat: no-repeat;
     flex: 1;
+    color: #fff;
+    background-position: center;
+
+    @media (min-width: 1024px) {
+        background-position: unset;
+    }
+
+    .heading {
+        margin-bottom: 15px;
+
+        h1 {
+            font-size: 1.875rem;
+            font-weight: 600;
+
+            @media (min-width: 1024px) {
+                font-size: 2.875rem;
+            }
+        }
+    }
+}
+
+.main-picture-container {
+    background-color: rgba(0, 0, 0, 0.55);
+    padding: 20px 15px;
+
+    @media (min-width: 1024px) {
+        padding: 40px 20px;
+    }
+}
+
+.subtitle {
+    @extend .h-font;
+    font-size: 1.875rem;
+    color: #f2f2f2;
+    line-height: 1.875rem;
+    margin-bottom: 30px;
+    font-weight: 400;
+
+    @media (min-width: 1024px) {
+        font-size: 2.875rem;
+        line-height: 2.875rem;
+    }
+
+    span {
+        font-weight: 600;
+    }
+}
+
+.main-rules {
+    margin-bottom: 40px;
+    font-size: 1.575rem;
+
+    div {
+        padding: 10px 0;
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 1.875rem;
+        line-height: 2.875rem;
+    }
+}
+
+.main-button-container {
+    margin-bottom: 15px;
+}
+
+.main-phone-container {
+    font-size: 1.125rem;
+}
+
+.main-phone {
+    font-weight: 500;
+    font-size: 28px;
+    color: #fff;
 }
 
 #services,
@@ -151,20 +339,34 @@ a:hover {
     background-color: $lgray;
 }
 
+#about-us {
+    @media (min-width: 1024px) {
+        padding-top: 159px;
+    }
+}
+
 .about-intro {
-    color: #F2F2F2;
+    color: #f2f2f2;
     font-weight: 500;
-    font-size: 22px;
+    font-size: 1.175rem;
     margin-bottom: 30px;
+
+    @media (min-width: 1024px) {
+        font-size: 1.375rem;
+    }
 }
 
 .about-text {
-    font-size: 18px;
-    color: #E0E0E0;
+    font-size: 1rem;
+    color: #e0e0e0;
     line-height: 28px;
 
-    p {
+    p:not(:last-child) {
         margin-bottom: 30px;
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 1.125rem;
     }
 }
 
@@ -174,9 +376,13 @@ a:hover {
 }
 
 .service-image-holder {
-    height: 280px;
-    background-color: #DBDCDD;
+    height: 240px;
+    background-color: #dbdcdd;
     overflow: hidden;
+
+    @media (min-width: 1024px) {
+        height: 280px;
+    }
 
     img {
         object-fit: cover;
@@ -185,9 +391,9 @@ a:hover {
 }
 
 .service-title {
-    color: #DBDCDD;
+    color: #dbdcdd;
     padding: 20px 5px;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 500;
 }
 
@@ -196,6 +402,10 @@ a:hover {
     position: relative;
     padding-top: 55px;
     padding-bottom: 0;
+}
+
+.benefit-padding {
+    padding-bottom: 90px;
 }
 
 .benefit-item {
@@ -219,11 +429,19 @@ a:hover {
     display: flex;
     justify-content: space-between;
     color: #fff;
-    padding: 45px 40px;
-    position: relative;
-    z-index: 1;
-    margin-bottom: -69px;
-    margin-top: 55px;
+    padding: 20px 15px;
+    text-align: center;
+
+    @media (min-width: 1024px) {
+        position: absolute;
+        text-align: unset;
+        padding: 45px 40px;
+        z-index: 1;
+        margin-bottom: -69px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
 }
 
 .leave-form-text {
@@ -234,24 +452,82 @@ a:hover {
     background-color: $dgray;
 }
 
+.review-item {
+    background-color: $lgray;
+    padding: 20px 20px 30px;
+}
+
+.review-author {
+    color: #e0e0e0;
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 1.275rem;
+
+    @media (min-width: 1024px) {
+        font-size: 1.5rem;
+        margin-bottom: 1.875rem;
+    }
+}
+
+.review-text {
+    color: #bdbdbd;
+    line-height: 24px;
+}
+
 .footer {
-    color: #BDBDBD;
+    color: #bdbdbd;
 }
 
 .footer-container {
+    padding: 30px 0;
     display: flex;
-    justify-content: space-between;
-    padding: 60px 0;
+    flex-direction: column;
+
+    @media (min-width: 1024px) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 60px 0;
+    }
+}
+
+.footer-left {
+    text-align: center;
+    order: 2;
+
+    @media (min-width: 1024px) {
+        text-align: left;
+        order: 1;
+    }
+}
+
+.footer-right {
+    order: 1;
+
+    @media (min-width: 1024px) {
+        order: 2;
+    }
 }
 
 .footer-right-container {
-    display: flex;
     gap: 90px;
+    border-bottom: 1px solid #bdbdbd;
+    margin-bottom: 30px;
+
+    @media (min-width: 1024px) {
+        display: flex;
+        border: 0;
+        margin-bottom: 0;
+    }
 }
 
 .footer-socials {
     display: flex;
+    justify-content: center;
     gap: 45px;
+
+    @media (min-width: 1024px) {
+        justify-content: unset;
+    }
 }
 
 .social-link {
@@ -286,12 +562,14 @@ a:hover {
 }
 
 .footer-contacts {
+    text-align: center;
+
     a {
         color: $primary-color;
     }
 
     .contact-link {
-        color: #BDBDBD;
+        color: #bdbdbd;
 
         &:hover {
             color: #fff;
@@ -300,6 +578,10 @@ a:hover {
 
     div {
         margin-bottom: 10px;
+    }
+
+    @media (min-width: 1024px) {
+        text-align: right;
     }
 }
 
@@ -310,7 +592,7 @@ a:hover {
 
 .copyright {
     font-size: 14px;
-    color: #C9C9C9;
+    color: #c9c9c9;
 
     a {
         color: inherit;
@@ -320,4 +602,3 @@ a:hover {
         }
     }
 }
-
