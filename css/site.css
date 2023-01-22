@@ -631,9 +631,11 @@ a:hover svg {
   color: #ffd83c;
 }
 
-.animate__animated {
-  opacity: 0;
-}
-.animate__animated.visible {
-  opacity: 1;
+@media screen and (min-width: 768px) {
+  .animate__animated {
+    opacity: 0;
+  }
+  .animate__animated.visible {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=site.css.map */

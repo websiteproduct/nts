@@ -645,10 +645,12 @@ a:hover {
 
 // animated.style //
 
-.animate__animated {
-    opacity: 0;
-
-    &.visible {
-        opacity: 1;
+@media screen and (min-width: 768px) {
+    .animate__animated {
+        opacity: 0;
+    
+        &.visible {
+            opacity: 1;
+        }
     }
 }
