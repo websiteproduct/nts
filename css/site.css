@@ -373,6 +373,16 @@ a:hover svg {
   background-color: #2b3038;
   margin: 0 30px;
 }
+.service-item:hover {
+  cursor: pointer;
+}
+.service-item:hover .service-image-holder img {
+  transform: scale(1.05);
+}
+.service-item:hover .service-title {
+  color: #ffd83c;
+  transition: color 0.3s ease-in-out;
+}
 @media (min-width: 768px) {
   .service-item {
     margin: 0;
@@ -389,6 +399,7 @@ a:hover svg {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
+  transition: transform 0.3s ease-in-out;
 }
 
 .service-title {

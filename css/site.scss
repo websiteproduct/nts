@@ -382,6 +382,19 @@ a:hover {
     background-color: $dgray;
     margin: 0 30px;
 
+    &:hover {
+        cursor: pointer;
+
+        .service-image-holder img {
+            transform: scale(1.05);
+        }
+
+        .service-title {
+            color: $primary-color;
+            transition: color .3s ease-in-out;
+        }
+    }
+
     @media (min-width: 768px) {
         margin: 0;
     }
@@ -396,6 +409,7 @@ a:hover {
     img {
         object-fit: cover;
         width: 100%;
+        transition: transform .3s ease-in-out;
     }
 }
 
