@@ -638,4 +638,15 @@ a:hover svg {
   .animate__animated.visible {
     opacity: 1;
   }
+}
+@media only screen and (max-width: 768px) {
+  .animate__animated {
+    /*CSS transitions*/
+    transition-property: none !important;
+    /*CSS transforms*/
+    transform: none !important;
+    /*CSS animations*/
+    -webkit-animation: none !important;
+    animation: none !important;
+  }
 }/*# sourceMappingURL=site.css.map */
