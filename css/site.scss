@@ -43,6 +43,11 @@ a,
 a:hover {
     text-decoration: none;
     cursor: pointer;
+    transition: .3s ease-in-out;
+
+    svg {
+        transition: .3s ease-in-out; 
+    }
 }
 
 .heading {
@@ -106,7 +111,7 @@ a:hover {
     justify-content: stretch;
     flex-direction: column;
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1024px) {
         height: 100vh;
     }
 }
@@ -259,10 +264,7 @@ a:hover {
     flex: 1;
     color: #fff;
     background-position: center;
-
-    @media (min-width: 1024px) {
-        background-position: unset;
-    }
+    background-size: cover;
 
     .heading {
         margin-bottom: 15px;
@@ -343,6 +345,10 @@ a:hover {
     @media (min-width: 1024px) {
         padding-top: 159px;
     }
+
+    .heading h2 {
+        line-height: .6;
+    }
 }
 
 .about-intro {
@@ -353,6 +359,7 @@ a:hover {
 
     @media (min-width: 1024px) {
         font-size: 1.375rem;
+        line-height: 1.75rem;
     }
 }
 
@@ -381,21 +388,10 @@ a:hover {
 }
 
 .service-image-holder {
-    height: 190px;
     background-color: #dbdcdd;
     overflow: hidden;
-
-    @media (min-width: 768px) {
-        height: 150px;
-    }
-
-    @media (min-width: 1024px) {
-        height: 210px;
-    }
-
-    @media (min-width: 1200px) {
-        height: 280px;
-    }
+    width: 100%;
+    aspect-ratio: 1.41;
 
     img {
         object-fit: cover;
@@ -630,5 +626,15 @@ a:hover {
         &:hover {
             color: $primary-color;
         }
+    }
+}
+
+// animated.style //
+
+.animate__animated {
+    opacity: 0;
+
+    &.visible {
+        opacity: 1;
     }
 }

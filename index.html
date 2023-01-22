@@ -13,6 +13,7 @@
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./css/site.css">
 </head>
 
@@ -21,10 +22,12 @@
         <header class="header">
             <div class="container">
                 <div class="header-container">
-                    <div class="logo">
-                        <img src="./images/logo.png" alt="Национальная такелажная служба">
+                    <div class="logo animate__animated" data-anim="animate__slideInLeft">
+                        <a href="/">
+                            <img src="./images/logo.png" alt="Национальная такелажная служба">
+                        </a>
                     </div>
-                    <div class="header-contacts">
+                    <div class="header-contacts animate__animated" data-anim="animate__slideInDown">
                         <div class="header-contacts-group">
                             <div class="contact-group">
                                 <div class="contact-icon">
@@ -125,10 +128,15 @@
         <div class="menu-container">
             <div class="container">
                 <button type="button" class="btn-burger" id="menu-toggler">
-                    <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m22 16.75c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75zm0-5c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75zm0-5c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75z" fill-rule="nonzero"/></svg>
+                    <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="m22 16.75c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75zm0-5c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75zm0-5c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75z"
+                            fill-rule="nonzero" />
+                    </svg>
                     Меню сайта
                 </button>
-                <nav class="main-menu">
+                <nav class="main-menu animate__animated" data-anim="animate__slideInLeft">
                     <a href="#">Главная</a>
                     <a href="#">О компании</a>
                     <a href="#">Услуги</a>
@@ -143,7 +151,7 @@
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-xl-9 col-12">
-                        <div class="main-picture-container">
+                        <div class="main-picture-container animate__animated animate__zoomInUp">
                             <div class="heading">
                                 <h1>Национальная Такелажная Служба</h1>
                             </div>
@@ -169,10 +177,10 @@
     </div>
     <section id="services" class="section">
         <div class="container">
-            <div class="heading">
+            <div class="heading animate__animated" data-anim="animate__slideInDown">
                 <h2>Услуги нашей компании</h2>
             </div>
-            <div class="row">
+            <div class="row animate__animated" data-anim="animate__zoomIn">
                 <div class="col-sm-12 col-md-4 mb-4">
                     <div class="service-item">
                         <div class="service-image-holder">
@@ -270,7 +278,7 @@
     </section>
     <section id="benefits" class="section">
         <div class="container benefit-padding">
-            <div class="row align-items-center">
+            <div class="row align-items-center benefits-container animate__animated" data-anim="animate__zoomInUp">
                 <div class="col-sm-12 col-lg-4 mb-4">
                     <div class="benefit-item">
                         <div class="benefit-number">
@@ -306,7 +314,7 @@
             </div>
         </div>
         <div class="container leave-order">
-            <div class="row align-items-center">
+            <div class="row align-items-center animate__animated" data-anim="animate__slideInUp">
                 <div class="col-sm-12 col-md-9 mb-4 mb-md-0">
                     <span class="leave-form-text">
                         Для оформления заказа необходимо позвонить по телефону или отправить заявку. Наш менеджер
@@ -324,25 +332,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-lg-6 mb-4">
-                    <div class="image-holder">
-                        <img src="./images/about-image.jpg" alt="О компании Национальная Такелажная Служба">
+                    <div class="image-holder animate__animated" data-anim="animate__slideInLeft">
+                        <img src="./images/about-us-image.jpg" alt="О компании Национальная Такелажная Служба">
                     </div>
                 </div>
                 <div class="col-sm-12 col-lg-6 mb-4">
-                    <div class="heading">
-                        <h2>О компании</h2>
-                    </div>
-                    <div class="about-intro">
-                        НАЦИОНАЛЬНАЯ ТАКЕЛАЖНАЯ СЛУЖБА предлагает экспертные такелажно-монтажные услуги в
-                        Санкт-Петербурге, Ленинградской и Новгородской областях.
-                    </div>
-                    <div class="about-text">
-                        <p>Мы специализируемся на такелаже и перемещении крупногабаритного и тяжелого оборудования и
-                            механизмов для удовлетворения особых потребностей промышленности и учреждений, от
-                            медицинского оборудования и аппаратов МРТ до коммерческих систем кондиционирования и
-                            промышленного оборудования.</p>
-                        <p>Наша квалифицированная команда готова предоставить Вам знания и опыт, необходимые для решения
-                            любых задач по установке, перемещению и монтажу оборудования.</p>
+                    <div class="about-us-container animate__animated" data-anim="animate__slideInRight">
+                        <div class="heading">
+                            <h2>О компании</h2>
+                        </div>
+                        <div class="about-intro">
+                            НАЦИОНАЛЬНАЯ ТАКЕЛАЖНАЯ СЛУЖБА<br>предлагает экспертные такелажно-монтажные услуги в
+                            Санкт-Петербурге, Ленинградской и Новгородской областях.
+                        </div>
+                        <div class="about-text">
+                            <p>Мы специализируемся на такелаже и перемещении крупногабаритного и тяжелого оборудования и
+                                механизмов для удовлетворения особых потребностей промышленности и учреждений, от
+                                медицинского оборудования и аппаратов МРТ до коммерческих систем кондиционирования и
+                                промышленного оборудования.</p>
+                            <p>Наша квалифицированная команда готова предоставить Вам знания и опыт, необходимые для решения
+                                любых задач по установке, перемещению и монтажу оборудования.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -350,17 +360,19 @@
     </section>
     <section id="reviews" class="section">
         <div class="container">
-            <div class="heading">
+            <div class="heading animate__animated" data-anim="animate__slideInUp">
                 <h2>Отзывы наших клиентов</h2>
             </div>
-            <div class="row">
+            <div class="row animate__animated animate__zoomInUp">
                 <div class="col-sm-12 col-lg-4 mb-3 mb-lg-0">
                     <div class="review-item">
                         <div class="review-author">
                             Кирилл Котов
                         </div>
                         <div class="review-text">
-                            Доброго времени суток! Работаем с данной фирмой уже довольно давно. За все время нашего сотрудничества, компания зарекомендовала себя как надежный и стабильный партнер. Никаких нареканий, одни положительные впечатления. Будем продолжать сотрудничество. Рекомендую!
+                            Доброго времени суток! Работаем с данной фирмой уже довольно давно. За все время нашего
+                            сотрудничества, компания зарекомендовала себя как надежный и стабильный партнер. Никаких
+                            нареканий, одни положительные впечатления. Будем продолжать сотрудничество. Рекомендую!
                         </div>
                     </div>
                 </div>
@@ -370,7 +382,9 @@
                             Анатолий Брежневский
                         </div>
                         <div class="review-text">
-                            Доброго времени суток! Работаем с данной фирмой уже довольно давно. За все время нашего сотрудничества, компания зарекомендовала себя как надежный и стабильный партнер. Никаких нареканий, одни положительные впечатления. Будем продолжать сотрудничество. Рекомендую!
+                            Доброго времени суток! Работаем с данной фирмой уже довольно давно. За все время нашего
+                            сотрудничества, компания зарекомендовала себя как надежный и стабильный партнер. Никаких
+                            нареканий, одни положительные впечатления. Будем продолжать сотрудничество. Рекомендую!
                         </div>
                     </div>
                 </div>
@@ -380,7 +394,9 @@
                             Ксения Истомина
                         </div>
                         <div class="review-text">
-                            Доброго времени суток! Работаем с данной фирмой уже довольно давно. За все время нашего сотрудничества, компания зарекомендовала себя как надежный и стабильный партнер. Никаких нареканий, одни положительные впечатления. Будем продолжать сотрудничество. Рекомендую!
+                            Доброго времени суток! Работаем с данной фирмой уже довольно давно. За все время нашего
+                            сотрудничества, компания зарекомендовала себя как надежный и стабильный партнер. Никаких
+                            нареканий, одни положительные впечатления. Будем продолжать сотрудничество. Рекомендую!
                         </div>
                     </div>
                 </div>
@@ -390,12 +406,12 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-container">
-                <div class="footer-left">
+                <div class="footer-left animate__animated" data-anim="animate__slideInLeft">
                     <div class="footer-company-title h-font">НАЦИОНАЛЬНАЯ ТАКЕЛАЖНАЯ СЛУЖБА</div>
                     <div class="main-goal">Такелажные работы</div>
                     <div class="copyright">© 2022 <a href="/">servis-national.ru</a></div>
                 </div>
-                <div class="footer-right">
+                <div class="footer-right animate__animated" data-anim="animate__slideInRight">
                     <div class="footer-right-container">
                         <div class="footer-socials">
                             <div class="footer-social-group">

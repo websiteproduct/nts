@@ -42,6 +42,11 @@ a,
 a:hover {
   text-decoration: none;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+a svg,
+a:hover svg {
+  transition: 0.3s ease-in-out;
 }
 
 .heading {
@@ -107,7 +112,7 @@ a:hover {
   justify-content: stretch;
   flex-direction: column;
 }
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .first-screen {
     height: 100vh;
   }
@@ -251,11 +256,7 @@ a:hover {
   flex: 1;
   color: #fff;
   background-position: center;
-}
-@media (min-width: 1024px) {
-  .main-picture {
-    background-position: unset;
-  }
+  background-size: cover;
 }
 .main-picture .heading {
   margin-bottom: 15px;
@@ -336,6 +337,9 @@ a:hover {
     padding-top: 159px;
   }
 }
+#about-us .heading h2 {
+  line-height: 0.6;
+}
 
 .about-intro {
   color: #f2f2f2;
@@ -346,6 +350,7 @@ a:hover {
 @media (min-width: 1024px) {
   .about-intro {
     font-size: 1.375rem;
+    line-height: 1.75rem;
   }
 }
 
@@ -375,24 +380,10 @@ a:hover {
 }
 
 .service-image-holder {
-  height: 190px;
   background-color: #dbdcdd;
   overflow: hidden;
-}
-@media (min-width: 768px) {
-  .service-image-holder {
-    height: 150px;
-  }
-}
-@media (min-width: 1024px) {
-  .service-image-holder {
-    height: 210px;
-  }
-}
-@media (min-width: 1200px) {
-  .service-image-holder {
-    height: 280px;
-  }
+  width: 100%;
+  aspect-ratio: 1.41;
 }
 .service-image-holder img {
   -o-object-fit: cover;
@@ -627,4 +618,11 @@ a:hover {
 }
 .copyright a:hover {
   color: #ffd83c;
+}
+
+.animate__animated {
+  opacity: 0;
+}
+.animate__animated.visible {
+  opacity: 1;
 }/*# sourceMappingURL=site.css.map */
