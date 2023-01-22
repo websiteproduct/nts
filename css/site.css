@@ -257,6 +257,7 @@ a:hover svg {
   color: #fff;
   background-position: center;
   background-size: cover;
+  background-position-x: 75%;
 }
 .main-picture .heading {
   margin-bottom: 15px;
