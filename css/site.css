@@ -396,6 +396,9 @@ a:hover svg {
   width: 100%;
   aspect-ratio: 1.41;
 }
+.service-image-holder.hide {
+  display: none;
+}
 .service-image-holder img {
   -o-object-fit: cover;
      object-fit: cover;

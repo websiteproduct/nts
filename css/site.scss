@@ -407,6 +407,10 @@ a:hover {
     width: 100%;
     aspect-ratio: 1.41;
 
+    &.hide {
+        display: none;
+    }
+
     img {
         object-fit: cover;
         width: 100%;
