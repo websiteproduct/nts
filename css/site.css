@@ -81,6 +81,11 @@ a:hover svg {
   }
 }
 
+.spacer {
+  padding: 15px 0;
+  background-color: #2b3038;
+}
+
 .text-primary {
   color: #ffd83c !important;
 }
@@ -138,6 +143,10 @@ a:hover svg {
   .logo img {
     max-width: 80%;
   }
+}
+.logo svg {
+  width: 100%;
+  max-width: 384px;
 }
 
 .header-contacts {
@@ -379,6 +388,7 @@ a:hover svg {
 }
 .service-item:hover .service-image-holder img {
   transform: scale(1.05);
+  filter: brightness(100%);
 }
 .service-item:hover .service-title {
   color: #ffd83c;
@@ -402,8 +412,9 @@ a:hover svg {
 .service-image-holder img {
   -o-object-fit: cover;
      object-fit: cover;
-  width: 100%;
-  transition: transform 0.3s ease-in-out;
+  width: 101%;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  filter: brightness(60%);
 }
 
 .service-title {
@@ -485,6 +496,13 @@ a:hover svg {
 #reviews {
   background-color: #2b3038;
 }
+#reviews .container {
+  overflow: hidden;
+}
+
+.reviews-container {
+  transition: transform 0.3s ease-in-out;
+}
 
 .review-item {
   background-color: #373d45;
@@ -507,6 +525,26 @@ a:hover svg {
 .review-text {
   color: #bdbdbd;
   line-height: 24px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dots {
+  display: flex;
+  gap: 25px;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  background-color: #828282;
+}
+.dot.active {
+  background-color: #ffd83c;
 }
 
 .footer {
@@ -572,11 +610,12 @@ a:hover svg {
 
 .social-link {
   display: flex;
-  align-content: center;
+  align-items: center;
   color: #fff;
 }
 .social-link svg {
   width: 16px;
+  height: 16px;
   margin-right: 15px;
   fill: #fff;
 }
@@ -643,6 +682,11 @@ a:hover svg {
     opacity: 1;
   }
 }
+.animate__slow_nts {
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+}
+
 @media only screen and (max-width: 768px) {
   .animate__animated {
     /*CSS transitions*/

@@ -79,6 +79,11 @@ a:hover {
     }
 }
 
+.spacer {
+    padding: 15px 0;
+    background-color: $dgray;
+}
+
 .text-primary {
     color: $primary-color !important;
 }
@@ -136,6 +141,11 @@ a:hover {
         @media (min-width: 1024px) {
             max-width: 80%;
         }
+    }
+
+    svg {
+        width: 100%;
+        max-width: 384px;
     }
 }
 
@@ -388,6 +398,7 @@ a:hover {
 
         .service-image-holder img {
             transform: scale(1.05);
+            filter: brightness(100%);
         }
 
         .service-title {
@@ -413,8 +424,9 @@ a:hover {
 
     img {
         object-fit: cover;
-        width: 100%;
-        transition: transform .3s ease-in-out;
+        width: 101%;
+        transition: transform .3s ease-in-out, filter .3s ease-in-out;
+        filter: brightness(60%);
     }
 }
 
@@ -495,6 +507,14 @@ a:hover {
 
 #reviews {
     background-color: $dgray;
+
+    .container {
+        overflow: hidden;
+    }
+}
+
+.reviews-container {
+    transition: transform .3s ease-in-out;
 }
 
 .review-item {
@@ -517,6 +537,27 @@ a:hover {
 .review-text {
     color: #bdbdbd;
     line-height: 24px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dots {
+    display: flex;
+    gap: 25px;
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    background-color: #828282;
+
+    &.active {
+        background-color: $primary-color;
+    }
 }
 
 .footer {
@@ -577,11 +618,12 @@ a:hover {
 
 .social-link {
     display: flex;
-    align-content: center;
+    align-items: center;
     color: #fff;
 
     svg {
         width: 16px;
+        height: 16px;
         margin-right: 15px;
         fill: #fff;
     }
@@ -658,6 +700,10 @@ a:hover {
             opacity: 1;
         }
     }
+}
+
+.animate__slow_nts {
+    animation-duration: 1.5s;
 }
 
 @media only screen and (max-width : 768px) {
