@@ -42,10 +42,10 @@ for (let i = 0; i < reviewCounter; i++) {
 const dots = document.querySelectorAll('.dot')
 
 nextBtn.addEventListener('click', () => {
-    dots[activePosition - 1].classList.remove('active')
-    if (activePosition > reviewCounter) activePosition = 1
-    
-    reviewsContainer.style.transform = `translateX(${activePosition * -33.33333333}%)`
-    activePosition++
-    dots[activePosition - 1].classList.add('active')
+    // dots[activePosition - 1].classList.remove('active')
+    // if (activePosition > reviewCounter) activePosition = 1
+
+    // reviewsContainer.style.transform = `translateX(${activePosition * -33.33333333}%)`
+    // activePosition++
+    // dots[activePosition - 1].classList.add('active')
 })

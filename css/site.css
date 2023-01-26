@@ -137,6 +137,7 @@ a:hover svg {
 }
 
 .logo img {
+  width: 400px;
   max-width: 100%;
 }
 @media (min-width: 1024px) {
@@ -531,6 +532,17 @@ a:hover svg {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.btn-arr {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-arr img {
+  width: 16px;
+  height: 16px;
 }
 
 .dots {
