@@ -49,3 +49,13 @@ nextBtn.addEventListener('click', () => {
     // activePosition++
     // dots[activePosition - 1].classList.add('active')
 })
+
+const reviewsTest = document.querySelector('#reviews-test')
+
+reviewsTest.addEventListener('touchstart', (e) => {
+    console.log('start', e.touches[0].clientX)
+})
+
+reviewsTest.addEventListener('touchend', (e) => {
+    console.log('end', e.changedTouches[0].clientX)
+})

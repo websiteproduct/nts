@@ -514,6 +514,14 @@ a:hover {
     }
 }
 
+#reviews-test .container {
+    overflow: hidden;
+
+    .reviews-container {
+        
+    }
+}
+
 .reviews-container {
     transition: transform .3s ease-in-out;
 }
