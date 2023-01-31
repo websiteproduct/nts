@@ -59,3 +59,9 @@ reviewsTest.addEventListener('touchstart', (e) => {
 reviewsTest.addEventListener('touchend', (e) => {
     console.log('end', e.changedTouches[0].clientX)
 })
+
+menu.addEventListener('click', (e) => {
+    if (e.target.classList.contains('logo-changer')) {
+        document.querySelector('.logo img').src = e.target.dataset.img
+    }
+})

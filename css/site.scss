@@ -749,3 +749,14 @@ a:hover {
 		animation: none !important;
 	}
 }
+
+.logo-changer {
+    border: 0;
+    background-color: rgba(255, 255, 255, 0);
+    outline: 0;
+    color: $primary-color;
+    font-family: inherit;
+    display: inline;
+    padding: 15px;
+    text-align: left;
+}
