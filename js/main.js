@@ -26,42 +26,36 @@ const animatedElements = document.querySelectorAll('.animate__animated')
 animatedElements.forEach(el => observer.observe(el))
 
 const nextBtn = document.querySelector('#next-review')
-const reviewsContainer = document.querySelector('.reviews-container')
-const reviewCounter = document.querySelectorAll('.review-item').length
-const dotsContainer = document.querySelector('.dots')
-let activePosition = 1
+// const reviewsContainer = document.querySelector('.reviews-container')
+// const reviewCounter = document.querySelectorAll('.review-item').length
+// const dotsContainer = document.querySelector('.dots')
+// let activePosition = 1
 
-for (let i = 0; i < reviewCounter; i++) {
-    const dot = document.createElement('div')
-    dot.classList.add('dot')
-    dot.dataset.slide = i
-    if (i === 0) dot.classList.add('active')
-    dotsContainer.append(dot)
-}
+// for (let i = 0; i < reviewCounter; i++) {
+//     const dot = document.createElement('div')
+//     dot.classList.add('dot')
+//     dot.dataset.slide = i
+//     if (i === 0) dot.classList.add('active')
+//     dotsContainer.append(dot)
+// }
 
-const dots = document.querySelectorAll('.dot')
+// const dots = document.querySelectorAll('.dot')
 
-nextBtn.addEventListener('click', () => {
-    // dots[activePosition - 1].classList.remove('active')
-    // if (activePosition > reviewCounter) activePosition = 1
+let items = document.querySelectorAll('.carousel .carousel-item')
 
-    // reviewsContainer.style.transform = `translateX(${activePosition * -33.33333333}%)`
-    // activePosition++
-    // dots[activePosition - 1].classList.add('active')
-})
+console.log(items)
 
-const reviewsTest = document.querySelector('#reviews-test')
+items.forEach((el) => {
+    const minPerSlide = 4
+    let next = el.nextElementSibling
 
-reviewsTest.addEventListener('touchstart', (e) => {
-    console.log('start', e.touches[0].clientX)
-})
+    for (var i = 1; i < minPerSlide; i++) {
+        if (!next) {
+            next = items[0]
+        }
 
-reviewsTest.addEventListener('touchend', (e) => {
-    console.log('end', e.changedTouches[0].clientX)
-})
-
-menu.addEventListener('click', (e) => {
-    if (e.target.classList.contains('logo-changer')) {
-        document.querySelector('.logo img').src = e.target.dataset.img
+        let cloneChild = next.cloneNode(true)
+        el.appendChild(cloneChild.children[0])
+        next = next.nextElementSibling
     }
 })
