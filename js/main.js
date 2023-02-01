@@ -76,3 +76,9 @@ items1.forEach((el) => {
         next = next.nextElementSibling
     }
 })
+
+menu.addEventListener('click', (e) => {
+    if (e.target.classList.contains('logo-changer')) {
+        document.querySelector('.logo img').src = e.target.dataset.img
+    }
+})
