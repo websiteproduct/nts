@@ -41,12 +41,29 @@ const nextBtn = document.querySelector('#next-review')
 
 // const dots = document.querySelectorAll('.dot')
 
-let items = document.querySelectorAll('.carousel .carousel-item')
+let items = document.querySelectorAll('#servicesSlider .carousel-item')
+let items1 = document.querySelectorAll('#reviewsIndicators .carousel-item')
 
-console.log(items)
+console.log('items', items)
+console.log('items1', items1)
 
 items.forEach((el) => {
-    const minPerSlide = 4
+    const minPerSlide = 3
+    let next = el.nextElementSibling
+
+    for (var i = 1; i < minPerSlide; i++) {
+        if (!next) {
+            next = items[0]
+        }
+
+        let cloneChild = next.cloneNode(true)
+        el.appendChild(cloneChild.children[0])
+        next = next.nextElementSibling
+    }
+})
+
+items1.forEach((el) => {
+    const minPerSlide = 3
     let next = el.nextElementSibling
 
     for (var i = 1; i < minPerSlide; i++) {
