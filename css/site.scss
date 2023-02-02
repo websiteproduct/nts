@@ -392,7 +392,7 @@ a:hover {
 .service-item {
     text-align: center;
     background-color: $dgray;
-    margin: 0 30px;
+    // margin: 0 30px;
 
     &:hover {
         cursor: pointer;
@@ -522,10 +522,17 @@ a:hover {
     }
 }
 
-#reviewsIndicators {
+#reviewsIndicators,
+#servicesSlider {
     .carousel-indicators {
-        bottom: -71px;
+        bottom: -58px;
         gap: 25px;
+        margin-bottom: 0;
+
+        @media (max-width: 768px) {
+            gap: 15px;
+            bottom: -45px;
+        }
     }
 
     .carousel-indicators [data-bs-target] {
@@ -534,6 +541,11 @@ a:hover {
         margin: 0;
         background-color: #828282;
         opacity: 1;
+
+        @media (max-width: 768px) {
+            width: 10px;
+            height: 10px;
+        }
 
         &.active {
             background-color: $primary-color;
@@ -580,9 +592,18 @@ a:hover {
     align-items: center;
     justify-content: center;
 
+    @media (max-width: 768px) {
+        padding: 10px;
+    }
+
     img {
         width: 16px;
         height: 16px;
+
+        @media (max-width: 768px) {
+            width: 10px;
+            height: 10px;
+        }
     }
 }
 
