@@ -24,8 +24,7 @@
                 <div class="header-container">
                     <div class="logo animate__animated animate__slow_nts" data-anim="animate__slideInLeft">
                         <a href="/">
-                            <!-- <img src="./images/logo.png" alt="Национальная такелажная служба"> -->
-                            <img src="./images/logo-final.svg" alt="">
+                            <img src="./images/logo.svg" alt="">
                         </a>
                     </div>
                     <div class="header-contacts animate__animated animate__slow_nts" data-anim="animate__slideInDown">
@@ -145,9 +144,6 @@
                     <a href="#">Выполненные работы</a>
                     <a href="#">Отзывы</a>
                     <a href="#">Связь с нами</a>
-                    <button type="button" class="logo-changer" data-img="./images/logo-final.svg">Logo 1</button>
-                    <button type="button" class="logo-changer" data-img="./images/logo-yellow-white.svg">Logo 2</button>
-                    <button type="button" class="logo-changer" data-img="./images/logo-yellow.svg">Logo 3</button>
                 </nav>
             </div>
         </div>
@@ -395,13 +391,13 @@
                 </div>
             </div>
             <div class="buttons-container d-sm-block d-md-none pt-3">
-                <button id="prev-review" type="button" class="btn btn-primary btn-arr"
-                    data-bs-target="#servicesSlider" data-bs-slide="prev">
+                <button id="prev-review" type="button" class="btn btn-primary btn-arr" data-bs-target="#servicesSlider"
+                    data-bs-slide="prev">
                     <img src="./icons/arr-left.svg" alt="">
                 </button>
                 <!-- <div class="dots"></div> -->
-                <button id="next-review" type="button" class="btn btn-primary btn-arr"
-                    data-bs-target="#servicesSlider" data-bs-slide="next">
+                <button id="next-review" type="button" class="btn btn-primary btn-arr" data-bs-target="#servicesSlider"
+                    data-bs-slide="next">
                     <img src="./icons/arr-right.svg" alt="">
                 </button>
             </div>
@@ -498,90 +494,92 @@
                 <h2>Отзывы наших клиентов</h2>
             </div>
             <div id="reviewsIndicators" class="carousel slide animate__animated animate__slow_nts animate__zoomInUp"
-                data-bs-touch="true" data-bs-ride="carousel">
+                data-bs-touch="true" data-tbs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#reviewsIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#reviewsIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#reviewsIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#reviewsIndicators" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#reviewsIndicators" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
+                </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <div class="col-sm-12 col-md-4">
-                            <div class="review-item">
-                                <div class="review-author">
-                                    Кирилл Котов
-                                </div>
-                                <div class="review-text">
-                                    Доброго времени суток! Работаем с данной фирмой уже довольно давно. За все время
-                                    нашего
-                                    сотрудничества, компания зарекомендовала себя как надежный и стабильный партнер.
-                                    Никаких
-                                    нареканий, одни положительные впечатления. Будем продолжать сотрудничество.
-                                    Рекомендую!
-                                </div>
+                        <div class="col-sm-12 col-md-4 review-item">
+                            <div class="review-author">
+                                Кирилл Котов
+                            </div>
+                            <div class="review-text">
+                                Доброго времени суток! Работаем с данной фирмой уже довольно давно. За все время
+                                нашего
+                                сотрудничества, компания зарекомендовала себя как надежный и стабильный партнер.
+                                Никаких
+                                нареканий, одни положительные впечатления. Будем продолжать сотрудничество.
+                                Рекомендую!
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div class="col-sm-12 col-md-4">
-                            <div class="review-item">
-                                <div class="review-author">
-                                    Анатолий Брежневский
-                                </div>
-                                <div class="review-text">
-                                    Доброго времени суток! Работаем с данной фирмой уже довольно давно. За все время
-                                    нашего
-                                    сотрудничества, компания зарекомендовала себя как надежный и стабильный партнер.
-                                    Никаких
-                                    нареканий, одни положительные впечатления. Будем продолжать сотрудничество.
-                                    Рекомендую!
-                                </div>
+                        <div class="col-sm-12 col-md-4 review-item">
+                            <div class="review-author">
+                                Анатолий Брежневский
+                            </div>
+                            <div class="review-text">
+                                Доброго времени суток! Работаем с данной фирмой уже довольно давно. За все время
+                                нашего
+                                сотрудничества, компания зарекомендовала себя как надежный и стабильный партнер.
+                                Никаких
+                                нареканий, одни положительные впечатления. Будем продолжать сотрудничество.
+                                Рекомендую!
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div class="col-sm-12 col-md-4">
-                            <div class="review-item">
-                                <div class="review-author">
-                                    Ксения Истомина
-                                </div>
-                                <div class="review-text">
-                                    Доброго времени суток! Работаем с данной фирмой уже довольно давно. За все время
-                                    нашего
-                                    сотрудничества, компания зарекомендовала себя как надежный и стабильный партнер.
-                                    Никаких
-                                    нареканий, одни положительные впечатления. Будем продолжать сотрудничество.
-                                    Рекомендую!
-                                </div>
+                        <div class="col-sm-12 col-md-4 review-item">
+                            <div class="review-author">
+                                Ксения Истомина
+                            </div>
+                            <div class="review-text">
+                                Доброго времени суток! Работаем с данной фирмой уже довольно давно. За все время
+                                нашего
+                                сотрудничества, компания зарекомендовала себя как надежный и стабильный партнер.
+                                Никаких
+                                нареканий, одни положительные впечатления. Будем продолжать сотрудничество.
+                                Рекомендую!
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div class="col-sm-12 col-md-4">
-                            <div class="review-item">
-                                <div class="review-author">
-                                    Дмитрий Бондарев
-                                </div>
-                                <div class="review-text">
-                                    Доброго времени суток! Работаем с данной фирмой уже довольно давно. За все время
-                                    нашего
-                                    сотрудничества, компания зарекомендовала себя как надежный и стабильный партнер.
-                                    Никаких
-                                    нареканий, одни положительные впечатления. Будем продолжать сотрудничество.
-                                    Рекомендую!
-                                </div>
+                        <div class="col-sm-12 col-md-4 review-item">
+                            <div class="review-author">
+                                Дмитрий Бондарев
+                            </div>
+                            <div class="review-text">
+                                Доброго времени суток! Работаем с данной фирмой уже довольно давно. За все время
+                                нашего
+                                сотрудничества, компания зарекомендовала себя как надежный и стабильный партнер.
+                                Никаких
+                                нареканий, одни положительные впечатления. Будем продолжать сотрудничество.
+                                Рекомендую!
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div class="col-sm-12 col-md-4">
-                            <div class="review-item">
-                                <div class="review-author">
-                                    Вячеслав Краснодарский
-                                </div>
-                                <div class="review-text">
-                                    Доброго времени суток! Работаем с данной фирмой уже довольно давно. За все время
-                                    нашего
-                                    сотрудничества, компания зарекомендовала себя как надежный и стабильный партнер.
-                                    Никаких
-                                    нареканий, одни положительные впечатления. Будем продолжать сотрудничество.
-                                    Рекомендую!
-                                </div>
+                        <div class="col-sm-12 col-md-4 review-item">
+                            <div class="review-author">
+                                Вячеслав Краснодарский
+                            </div>
+                            <div class="review-text">
+                                Доброго времени суток! Работаем с данной фирмой уже довольно давно. За все время
+                                нашего
+                                сотрудничества, компания зарекомендовала себя как надежный и стабильный партнер.
+                                Никаких
+                                нареканий, одни положительные впечатления. Будем продолжать сотрудничество.
+                                Рекомендую!
                             </div>
                         </div>
                     </div>
