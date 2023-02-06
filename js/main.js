@@ -80,7 +80,6 @@ const sliderContainer = document.querySelector('.reviews-container')
 const sliderNavContainer = document.querySelector('.slider-navigation')
 const originSlidesLength = sliderContainer.querySelectorAll('.review-item-container').length
 let activeSlide = 0
-let slidesToPush = [];
 
 sliderNavContainer.addEventListener('click', (e) => {
     let currentElement = e.target.closest('.btn-arr')
@@ -89,57 +88,33 @@ sliderNavContainer.addEventListener('click', (e) => {
 
     if (currentElement?.tagName === 'BUTTON') {
         if (currentElement.dataset.direction === 'next') {
-            slidesToPush.push(slides[activeSlide])
-            sliderContainer.classList.remove('remove-animation')
-            sliderContainer.append(slides[activeSlide].cloneNode(true))
-
             activeSlide++
-
-            if (activeSlide === 5) {
-                sliderContainer.style.transform = `translate3d(calc(-${columnSize}px * ${activeSlide}), 0, 0)`
-                activeSlide = 0
-                setTimeout(() => {
-                    slidesToPush.map(slide => slide.remove())
-                    slidesToPush = [];
-                    sliderContainer.classList.add('remove-animation')
-                    sliderContainer.style.transform = `translate3d(0, 0, 0)`
-                }, 300)
-            } else {
-                sliderContainer.style.transform = `translate3d(calc(-${columnSize}px * ${activeSlide}), 0, 0)`
-            }
-
-            updateDot(sliderNavContainer.querySelector(`.dot:nth-child(${activeSlide + 1})`))
-        }
-
-        if (currentElement.dataset.direction === 'prev') {
+            sliderContainer.append(slides[activeSlide - 1].cloneNode(true))
+        } else if (currentElement.dataset.direction === 'prev') {
             activeSlide--
-
-            if (activeSlide === -1 || activeSlide === 0) {
-                if (activeSlide === 0) {
-                    console.log('мы прошли круг')
-                    sliderContainer.querySelectorAll('.review-item-container').forEach(slide => slide.remove())
-                }
-
-                sliderContainer.prepend(...slides.map(slide => slide.cloneNode(true)))
-                // activeSlide = 5
-                sliderContainer.classList.add('remove-animation')
-                sliderContainer.style.transform = `translate3d(calc(-${columnSize}px * 5), 0, 0)`
-                setTimeout(() => {
-                    // slidesToPush.map(slide => slide.remove())
-                    // slidesToPush = [];
-                    sliderContainer.classList.remove('remove-animation')
-                    activeSlide = 5
-                    sliderContainer.style.transform = `translate3d(calc(-${columnSize}px * ${activeSlide - 1}), 0, 0)`
-                    updateDot(sliderNavContainer.querySelector(`.dot:nth-child(${activeSlide})`))
-                }, 300)
-            } else {
-                sliderContainer.style.transform = `translate3d(calc(-${columnSize}px * ${activeSlide - 1}), 0, 0)`
-            }
-            
-            //updateDot(sliderNavContainer.querySelector(`.dot:nth-child(${activeSlide})`))
-
-            //sliderContainer.style.transform = `translate3d(calc(-33.33333333% * ${activeSlide}), 0, 0)`
+        } else {
+            return
         }
+
+        sliderContainer.classList.remove('remove-animation')
+        sliderContainer.style.transform = `translate3d(calc(-${columnSize}px * ${activeSlide}), 0, 0)`
+
+        console.log(activeSlide)
+
+        if (activeSlide === originSlidesLength) {
+            setTimeout(() => {
+                sliderContainer.classList.add('remove-animation')
+                activeSlide = 0
+                sliderContainer.style.transform = `translate3d(calc(-${columnSize}px * ${activeSlide}), 0, 0)`
+
+                slides.forEach((slide, index) => {
+                    if (index >= 5) {
+                        slide.remove()
+                    }
+                })
+            }, 300)
+        }
+
     }
 
     if (e.target.classList.contains('dot')) {
@@ -147,12 +122,5 @@ sliderNavContainer.addEventListener('click', (e) => {
             updateDot(e.target)
             sliderContainer.style.transform = `translate3d(calc(-${columnSize}px * ${+e.target.dataset.goSlide}), 0, 0)`
         }
-
-        console.log(+e.target.dataset.goSlide)
     }
 })
-
-function updateDot(dot) {
-    sliderNavContainer.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'))
-    dot.classList.add('active')
-}
