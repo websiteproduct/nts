@@ -414,13 +414,9 @@ a:hover {
 }
 
 .service-image-holder {
-    // background-color: #dbdcdd;
     aspect-ratio: 1.41;
     overflow: hidden;
-
-    @media (min-width: 768px) {
-        border: 3px solid #2b3038;
-    }
+    border: 3px solid #2b3038;
 
     &.hide {
         display: none;
@@ -517,17 +513,27 @@ a:hover {
     }
 }
 
-#reviews-test .container {
-    overflow: hidden;
+#reviews-test {
+    background-color: $dgray;
 
-    .reviews-container {
-        
+    .container {
+        overflow: hidden;
+    }    
+}
+
+.reviews-container {
+    // transform: translate3d(calc(-33.33333333% * 5), 0, 0);
+
+    &:not(.remove-animation) > div {
+        transition: transform .5s ease-in-out;
     }
 }
 
 #reviewsIndicators,
-#servicesSlider {
-    .carousel-indicators {
+#servicesSlider,
+#reviews-test {
+    .carousel-indicators,
+    .dots {
         bottom: -58px;
         gap: 25px;
         margin-bottom: 0;
@@ -538,7 +544,8 @@ a:hover {
         }
     }
 
-    .carousel-indicators [data-bs-target] {
+    .carousel-indicators [data-bs-target],
+    .dot {
         width: 16px;
         height: 16px;
         margin: 0;
@@ -558,6 +565,10 @@ a:hover {
 
 .reviews-container {
     transition: transform .3s ease-in-out;
+
+    &.remove-animation {
+        transition: transform 0s ease-in-out;
+    }
 }
 
 .review-item {
@@ -619,6 +630,10 @@ a:hover {
     width: 16px;
     height: 16px;
     background-color: #828282;
+
+    &:hover {
+        cursor: pointer;
+    }
 
     &.active {
         background-color: $primary-color;

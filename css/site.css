@@ -404,11 +404,7 @@ a:hover svg {
 .service-image-holder {
   aspect-ratio: 1.41;
   overflow: hidden;
-}
-@media (min-width: 768px) {
-  .service-image-holder {
-    border: 3px solid #2b3038;
-  }
+  border: 3px solid #2b3038;
 }
 .service-image-holder.hide {
   display: none;
@@ -504,24 +500,44 @@ a:hover svg {
   overflow: hidden;
 }
 
+#reviews-test {
+  background-color: #2b3038;
+}
 #reviews-test .container {
   overflow: hidden;
 }
+
+.reviews-container:not(.remove-animation) > div {
+  transition: transform 0.5s ease-in-out;
+}
+
 #reviewsIndicators .carousel-indicators,
-#servicesSlider .carousel-indicators {
+#reviewsIndicators .dots,
+#servicesSlider .carousel-indicators,
+#servicesSlider .dots,
+#reviews-test .carousel-indicators,
+#reviews-test .dots {
   bottom: -58px;
   gap: 25px;
   margin-bottom: 0;
 }
 @media (max-width: 768px) {
   #reviewsIndicators .carousel-indicators,
-#servicesSlider .carousel-indicators {
+#reviewsIndicators .dots,
+#servicesSlider .carousel-indicators,
+#servicesSlider .dots,
+#reviews-test .carousel-indicators,
+#reviews-test .dots {
     gap: 15px;
     bottom: -45px;
   }
 }
 #reviewsIndicators .carousel-indicators [data-bs-target],
-#servicesSlider .carousel-indicators [data-bs-target] {
+#reviewsIndicators .dot,
+#servicesSlider .carousel-indicators [data-bs-target],
+#servicesSlider .dot,
+#reviews-test .carousel-indicators [data-bs-target],
+#reviews-test .dot {
   width: 16px;
   height: 16px;
   margin: 0;
@@ -530,18 +546,29 @@ a:hover svg {
 }
 @media (max-width: 768px) {
   #reviewsIndicators .carousel-indicators [data-bs-target],
-#servicesSlider .carousel-indicators [data-bs-target] {
+#reviewsIndicators .dot,
+#servicesSlider .carousel-indicators [data-bs-target],
+#servicesSlider .dot,
+#reviews-test .carousel-indicators [data-bs-target],
+#reviews-test .dot {
     width: 10px;
     height: 10px;
   }
 }
 #reviewsIndicators .carousel-indicators [data-bs-target].active,
-#servicesSlider .carousel-indicators [data-bs-target].active {
+#reviewsIndicators .dot.active,
+#servicesSlider .carousel-indicators [data-bs-target].active,
+#servicesSlider .dot.active,
+#reviews-test .carousel-indicators [data-bs-target].active,
+#reviews-test .dot.active {
   background-color: #ffd83c;
 }
 
 .reviews-container {
   transition: transform 0.3s ease-in-out;
+}
+.reviews-container.remove-animation {
+  transition: transform 0s ease-in-out;
 }
 
 .review-item {
@@ -605,6 +632,9 @@ a:hover svg {
   width: 16px;
   height: 16px;
   background-color: #828282;
+}
+.dot:hover {
+  cursor: pointer;
 }
 .dot.active {
   background-color: #ffd83c;
