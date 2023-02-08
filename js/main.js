@@ -24,42 +24,42 @@ const animatedElements = document.querySelectorAll('.animate__animated')
 
 animatedElements.forEach(el => observer.observe(el))
 
-const nextBtn = document.querySelector('#next-review')
+// let items = document.querySelectorAll('#servicesSlider .carousel-service-item')
+// let items1 = document.querySelectorAll('#reviewsIndicators .carousel-item')
 
-let items = document.querySelectorAll('#servicesSlider .carousel-service-item')
-let items1 = document.querySelectorAll('#reviewsIndicators .carousel-item')
+// items.forEach((el) => {
+//     const minPerSlide = 3
+//     let next = el.nextElementSibling
 
-items.forEach((el) => {
-    const minPerSlide = 3
-    let next = el.nextElementSibling
+//     for (let i = 1; i < minPerSlide; i++) {
+//         if (!next) {
+//             next = items[0]
+//         }
 
-    for (let i = 1; i < minPerSlide; i++) {
-        if (!next) {
-            next = items[0]
-        }
+//         let cloneChild = next.cloneNode(true)
+//         el.appendChild(cloneChild.children[0])
+//         next = next.nextElementSibling
+//     }
+// })
 
-        let cloneChild = next.cloneNode(true)
-        el.appendChild(cloneChild.children[0])
-        next = next.nextElementSibling
-    }
-})
+// items1.forEach((el) => {
+//     const minPerSlide = 3
+//     let next = el.nextElementSibling
 
-items1.forEach((el) => {
-    const minPerSlide = 3
-    let next = el.nextElementSibling
+//     for (let i = 1; i < minPerSlide; i++) {
+//         if (!next) {
+//             next = items1[0]
+//         }
 
-    for (let i = 1; i < minPerSlide; i++) {
-        if (!next) {
-            next = items1[0]
-        }
-
-        let cloneChild = next.cloneNode(true)
-        el.appendChild(cloneChild.children[0])
-        next = next.nextElementSibling
-    }
-})
+//         let cloneChild = next.cloneNode(true)
+//         el.appendChild(cloneChild.children[0])
+//         next = next.nextElementSibling
+//     }
+// })
 
 // custom slider
+
+const sliders = document.querySelectorAll('.slider')
 
 const sliderContainer = document.querySelector('.reviews-container')
 const sliderNavContainer = document.querySelector('.slider-navigation')
