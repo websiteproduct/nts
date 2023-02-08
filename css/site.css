@@ -507,6 +507,14 @@ a:hover svg {
   overflow: hidden;
 }
 
+.reviews-container {
+  transform: translate3d(-500%, 0, 0);
+}
+@media (min-width: 768px) {
+  .reviews-container {
+    transform: translate3d(-166.66666665%, 0, 0);
+  }
+}
 .reviews-container:not(.remove-animation) > div {
   transition: transform 0.5s ease-in-out;
 }
@@ -568,7 +576,7 @@ a:hover svg {
   transition: transform 0.3s ease-in-out;
 }
 .reviews-container.remove-animation {
-  transition: transform 0s ease-in-out;
+  transition: unset;
 }
 
 .review-item {

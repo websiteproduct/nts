@@ -522,7 +522,11 @@ a:hover {
 }
 
 .reviews-container {
-    // transform: translate3d(calc(-33.33333333% * 5), 0, 0);
+    transform: translate3d(calc(-100% * 5), 0, 0);
+
+    @media (min-width: 768px) {
+        transform: translate3d(calc(-33.33333333% * 5), 0, 0);
+    }
 
     &:not(.remove-animation) > div {
         transition: transform .5s ease-in-out;
@@ -567,7 +571,7 @@ a:hover {
     transition: transform .3s ease-in-out;
 
     &.remove-animation {
-        transition: transform 0s ease-in-out;
+        transition: unset;
     }
 }
 
