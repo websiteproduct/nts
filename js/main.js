@@ -107,6 +107,8 @@ sliderNavContainer.addEventListener('click', (e) => {
         }
     }
 
+    slideHandle()
+
     if (e.target.classList.contains('dot')) {
         sliderContainer.classList.remove('remove-animation')
 
