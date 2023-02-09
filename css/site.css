@@ -630,11 +630,20 @@ a:hover svg {
   display: none;
   padding-bottom: 50px;
 }
+#carouselExampleCaptions .carousel-inner .carousel-item > div {
+  display: block;
+}
 #carouselExampleCaptions .carousel-item img {
   max-width: 100%;
   max-height: 350px;
   -o-object-fit: cover;
      object-fit: cover;
+  display: none;
+}
+@media (min-width: 768px) {
+  #carouselExampleCaptions .carousel-item img {
+    display: unset;
+  }
 }
 #carouselExampleCaptions .carousel-caption {
   position: unset;
