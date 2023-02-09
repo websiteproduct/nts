@@ -59,12 +59,15 @@ animatedElements.forEach(el => observer.observe(el))
 
 // custom slider
 
-const sliders = document.querySelectorAll('.slider')
+//const sliders = document.querySelectorAll('.slider-container')
 
-const sliderContainer = document.querySelector('.reviews-container')
-const sliderNavContainer = document.querySelector('.slider-navigation')
-const originSlidesLength = sliderContainer.querySelectorAll('.review-item-container').length
-let activeSlide = 5
+// sliders.forEach(sliderContainer => {
+const serviceSlider = document.querySelector('.slider-container[data-slider-name="services"]')
+const reviewsSlider = document.querySelector('.slider-container[data-slider-name="reviews"]')
+const sliderServicesNavContainer = serviceSlider.parentElement.querySelector('.slider-navigation')
+const sliderReviewsNavContainer = reviewsSlider.parentElement.querySelector('.slider-navigation')
+let activeServicesSlide = +serviceSlider.dataset.slidesCount
+let activeReviewsSlide = +reviewsSlider.dataset.slidesCount
 
 if ((('ontouchstart' in window) ||
     (navigator.maxTouchPoints > 0) ||
@@ -72,70 +75,115 @@ if ((('ontouchstart' in window) ||
     let start = 0
     let end = 0
 
-    sliderContainer.addEventListener('touchstart', (e) => {
-        console.log('start', e)
+    serviceSlider.addEventListener('touchstart', (e) => {
         start = e.changedTouches[0].clientX
     })
 
-    sliderContainer.addEventListener('touchend', (e) => {
-        console.log('end', e)
+    serviceSlider.addEventListener('touchend', (e) => {
         end = e.changedTouches[0].clientX
 
         if (end - start > 0 && end - start > 40) {
-            activeSlide--
+            activeServicesSlide--
         } else if (end - start < 0 && end - start < 40) {
-            activeSlide++
+            activeServicesSlide++
         }
 
-        slideHandle()
+        serviceSlideHandle()
     })
 }
 
-const slides = Array.from(sliderContainer.querySelectorAll('.review-item-container'))
-let columnSize = slides[0].offsetWidth
+const servicesSlides = serviceSlider.querySelectorAll('.item-container')
+let serviceColumnSize = servicesSlides[0].offsetWidth
 
-sliderNavContainer.addEventListener('click', (e) => {
+sliderServicesNavContainer.addEventListener('click', (e) => {
     let currentElement = e.target.closest('.btn-arr')
 
     if (currentElement?.tagName === 'BUTTON') {
         if (currentElement.dataset.direction === 'next') {
-            activeSlide++
+            activeServicesSlide++
         } else if (currentElement.dataset.direction === 'prev') {
-            activeSlide--
+            activeServicesSlide--
         } else {
             return
         }
     }
 
-    slideHandle()
+    serviceSlideHandle()
 
     if (e.target.classList.contains('dot')) {
-        sliderContainer.classList.remove('remove-animation')
+        servicesSlides.classList.remove('remove-animation')
 
         if (!e.target.classList.contains('active')) {
-            sliderNavContainer.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'))
+            sliderServicesNavContainer.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'))
             e.target.classList.add('active')
-            activeSlide = +e.target.dataset.goSlide + 4;
-            sliderContainer.style.transform = `translate3d(calc(-${columnSize}px * ${activeSlide}), 0, 0)`
+            activeServicesSlide = +e.target.dataset.goSlide + 8;
+            servicesSlides.style.transform = `translate3d(calc(-${serviceColumnSize}px * ${activeServicesSlide}), 0, 0)`
         }
     }
 })
 
-function slideHandle() {
-    if (activeSlide === 10 || activeSlide === 0) {
-        sliderContainer.style.transform = `translate3d(calc(-${columnSize}px * ${activeSlide}), 0, 0)`
-        activeSlide = 5
+function serviceSlideHandle() {
+    if (activeServicesSlide === 18 || activeServicesSlide === 0) {
+        serviceSlider.style.transform = `translate3d(calc(-${serviceColumnSize}px * ${activeServicesSlide}), 0, 0)`
+        activeServicesSlide = serviceSlider.dataset.slidesCount
         setTimeout(() => {
-            sliderContainer.classList.add('remove-animation')
-            sliderContainer.style.transform = `translate3d(calc(-${columnSize}px * ${activeSlide}), 0, 0)`
+            serviceSlider.classList.add('remove-animation')
+            serviceSlider.style.transform = `translate3d(calc(-${serviceColumnSize}px * ${activeServicesSlide}), 0, 0)`
         }, 300)
 
     } else {
-        sliderContainer.classList.remove('remove-animation')
-        sliderContainer.style.transform = `translate3d(calc(-${columnSize}px * ${activeSlide}), 0, 0)`
+        serviceSlider.classList.remove('remove-animation')
+        serviceSlider.style.transform = `translate3d(calc(-${serviceColumnSize}px * ${activeServicesSlide}), 0, 0)`
     }
 
-    sliderNavContainer.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'))
-    const activeDot = activeSlide < 5 ? 1 + activeSlide : activeSlide - 4
-    sliderNavContainer.querySelector(`.dot[data-go-slide="${activeDot}"]`).classList.add('active')
+    sliderServicesNavContainer.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'))
+    const activeServiceDot = activeServicesSlide < +serviceSlider.dataset.slidesCount ? 1 + activeServicesSlide : activeServicesSlide - (+serviceSlider.dataset.slidesCount - 1)
+    sliderServicesNavContainer.querySelector(`.dot[data-go-slide="${activeServiceDot}"]`).classList.add('active')
+}
+// })
+
+// const sliderContainer = document.querySelector('.slider-container')
+
+
+if ((('ontouchstart' in window) ||
+    (navigator.maxTouchPoints > 0) ||
+    (navigator.msMaxTouchPoints > 0))) {
+    let startR = 0
+    let endR = 0
+
+    reviewsSlider.addEventListener('touchstart', (e) => {
+        startR = e.changedTouches[0].clientX
+    })
+
+    reviewsSlider.addEventListener('touchend', (e) => {
+        endR = e.changedTouches[0].clientX
+
+        if (endR - startR > 0 && endR - startR > 40) {
+            activeReviewsSlide--
+        } else if (endR - startR < 0 && endR - startR < 40) {
+            activeReviewsSlide++
+        }
+
+        reviewsSlideHandle()
+    })
+}
+
+
+function reviewsSlideHandle() {
+    if (activeServicesSlide === 18 || activeServicesSlide === 0) {
+        serviceSlider.style.transform = `translate3d(calc(-${serviceColumnSize}px * ${activeServicesSlide}), 0, 0)`
+        activeServicesSlide = serviceSlider.dataset.slidesCount
+        setTimeout(() => {
+            serviceSlider.classList.add('remove-animation')
+            serviceSlider.style.transform = `translate3d(calc(-${serviceColumnSize}px * ${activeServicesSlide}), 0, 0)`
+        }, 300)
+
+    } else {
+        serviceSlider.classList.remove('remove-animation')
+        serviceSlider.style.transform = `translate3d(calc(-${serviceColumnSize}px * ${activeServicesSlide}), 0, 0)`
+    }
+
+    sliderServicesNavContainer.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'))
+    const activeServiceDot = activeServicesSlide < +serviceSlider.dataset.slidesCount ? 1 + activeServicesSlide : activeServicesSlide - (+serviceSlider.dataset.slidesCount - 1)
+    sliderServicesNavContainer.querySelector(`.dot[data-go-slide="${activeServiceDot}"]`).classList.add('active')
 }

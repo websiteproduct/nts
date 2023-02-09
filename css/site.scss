@@ -353,6 +353,10 @@ a:hover {
     background-color: $lgray;
 }
 
+#services .container {
+    overflow: hidden;
+}
+
 #about-us {
     @media (min-width: 1024px) {
         padding-top: 159px;
@@ -521,53 +525,25 @@ a:hover {
     }    
 }
 
-.reviews-container {
-    transform: translate3d(calc(-100% * 5), 0, 0);
-
-    @media (min-width: 768px) {
-        transform: translate3d(calc(-33.33333333% * 5), 0, 0);
-    }
-
+.slider-container {
     &:not(.remove-animation) > div {
         transition: transform .5s ease-in-out;
     }
 }
 
-#reviewsIndicators,
-#servicesSlider,
-#reviews-test {
-    .carousel-indicators,
-    .dots {
-        bottom: -58px;
-        gap: 25px;
-        margin-bottom: 0;
+.slider-container[data-slider-name="services"] {
+    transform: translate3d(calc(-100% * 9), 0, 0);
+}
 
-        @media (max-width: 768px) {
-            gap: 15px;
-            bottom: -45px;
-        }
-    }
+.slider-container[data-slider-name="reviews"] {
+    transform: translate3d(calc(-100% * 5), 0, 0);
 
-    .carousel-indicators [data-bs-target],
-    .dot {
-        width: 16px;
-        height: 16px;
-        margin: 0;
-        background-color: #828282;
-        opacity: 1;
-
-        @media (max-width: 768px) {
-            width: 10px;
-            height: 10px;
-        }
-
-        &.active {
-            background-color: $primary-color;
-        }
+    @media (min-width: 768px) {
+        transform: translate3d(calc(-33.33333333% * 5), 0, 0);
     }
 }
 
-.reviews-container {
+.slider-container {
     transition: transform .3s ease-in-out;
 
     &.remove-animation {
@@ -627,16 +603,29 @@ a:hover {
 
 .dots {
     display: flex;
+    bottom: -58px;
     gap: 25px;
+    margin-bottom: 0;
+
+    @media (max-width: 768px) {
+        gap: 15px;
+        bottom: -45px;
+    }
 }
 
 .dot {
     width: 16px;
     height: 16px;
+    margin: 0;
     background-color: #828282;
 
     &:hover {
         cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        width: 10px;
+        height: 10px;
     }
 
     &.active {
