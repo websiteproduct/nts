@@ -522,7 +522,18 @@ a:hover {
 
     .container {
         overflow: hidden;
-    }    
+    }
+    
+    &.show-alt {
+        .slider-container,
+        .slider-navigation {
+            display: none;
+        }
+
+        #carouselExampleCaptions {
+            display: block;
+        }
+    }
 }
 
 .slider-container {
@@ -630,6 +641,34 @@ a:hover {
 
     &.active {
         background-color: $primary-color;
+    }
+}
+
+#carouselExampleCaptions {
+    display: none;
+    padding-bottom: 50px;
+
+    .carousel-item {
+        // display: flex;
+
+        img {
+            max-width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+        }
+    }
+
+    .carousel-caption {
+        position: unset;
+        text-align: left;
+    }
+
+    .carousel-indicators {
+        bottom: 0;
+
+        [data-bs-target] {
+            background-color: $primary-color;
+        }
     }
 }
 

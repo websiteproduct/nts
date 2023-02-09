@@ -420,7 +420,8 @@
                     <img src="./icons/arr-right.svg" alt="">
                 </button>
             </div> -->
-            <div class="row flex-nowrap flex-md-wrap slider-container d-sm-block d-md-none" data-slider-name="services" data-slides-count="9">
+            <div class="row flex-nowrap flex-md-wrap slider-container d-sm-block d-md-none" data-slider-name="services"
+                data-slides-count="9">
                 <div class="col-sm-12 col-md-4 mb-4 item-container">
                     <div class="service-item">
                         <div class="service-image-holder">
@@ -915,8 +916,12 @@
     </section> -->
     <section class="section" id="reviews-test">
         <div class="container">
-            <div class="heading animate__animated animate__slow_nts" data-anim="animate__slideInUp">
+            <div class="heading animate__animated animate__slow_nts"
+                style="display: flex; justify-content: space-between;" data-anim="animate__slideInUp">
                 <h2>Отзывы наших клиентов</h2>
+                <div class="tumbler">
+                    <button type="button" id="reviews-toggler" class="btn btn-sm btn-primary">Переключить</button>
+                </div>
             </div>
             <div class="row flex-nowrap slider-container" data-slider-name="reviews" data-slides-count="5">
                 <div class="col-sm-12 col-md-4 item-container">
@@ -1158,6 +1163,72 @@
                 </div>
                 <button type="button" class="btn btn-primary btn-arr" data-direction="next">
                     <img src="./icons/arr-right.svg" alt="Вперед">
+                </button>
+            </div>
+            <div id="carouselExampleCaptions" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./images/reviews/art_design.jpeg" class="d-block col-md-4" alt="...">
+                        <div class="carousel-caption col-md-8">
+                            <h5>ТИПОГРАФИЯ АртДизайн</h5>
+                            <p>Руководитель: Чайникова А.С</p>
+                            <p>Наше знакомство с НАЦИОНАЛЬНОЙ ТАКЕЛАЖНОЙ СЛУЖБОЙ связано с перемещением и
+                                транспортировкой
+                                тяжелых печатных станков, принтеров, плоттеров и оборудования служб обеспечения.</p>
+                            <p>Выражаю благодарность руководству компании за быструю и качественную работу по переезду
+                                нашей типографии в новое здание. Спасибо, что учли все наши пожелания, связанные с
+                                особенностями производственного процесса.</p>
+                            <p>Мы определенно будем обращаться в Вашу компанию снова и рекомендовать ее как надежного
+                                партнера!</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/reviews/logistic-auto.jpeg" class="d-block col-md-4" alt="...">
+                        <div class="carousel-caption col-md-8">
+                            <h5>ООО «ЛОГИСТИК АВТО»</h5>
+                            <p>Ген. директор: Торбин В.Б</p>
+                            <p>Компания ООО «ЛОГИСТИК АВТО» выражает Благодарность компании НАЦИОНАЛЬНАЯ ТАКЕЛАЖНАЯ СЛУЖБА  за профессионализм в проведении такелажных работ при поставке компьютерных томографов в межрайонные больницы Ленинградской области.</p>
+                            <p>Проявленные знания, опыт и мастерство сотрудников компании, оперативность — все это является подтверждением высоких профессиональных качеств каждого члена коллектива и компании в целом.</p>
+                            <p>Надеемся на дальнейшее плодотворное и взаимовыгодное сотрудничество.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/reviews/Argus.jpeg" class="d-block col-md-4" alt="...">
+                        <div class="carousel-caption col-md-8">
+                            <h5>ООО "Аргус"</h5>
+                            <p>Ген. директор: Повид О.А</p>
+                            <p>ООО «АРГУС» выражает свою признательность и благодарность НАЦИОНАЛЬНОЙ ТАКЕЛАЖНОЙ СЛУЖБЕ за оказанные услуги по разгрузке и заносу в помещение  оборудования. Хотим отметить высокий уровень работы Ваших специалистов. Все работы были выполнены точно и в срок. Отдельно хотелось бы поблагодарить менеджера Ирину за высококвалифицированное сопровождение по организации и выполнению работ. Надеемся и в будущем на Вашу  надежность и высокую репутацию. Желаем успешного развития и процветания.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/reviews/duksuk.jpeg" class="d-block col-md-4" alt="...">
+                        <div class="carousel-caption col-md-8">
+                            <h5>ООО «ДУКСУК›</h5>
+                            <p>Ген. директор: Перетятько Г.В.</p>
+                            <p>Благодарим  команду специалистов компании «НАЦИОНАЛЬНАЯ ТАКЕЛАЖНАЯ СЛУЖБА » за квалифицированную помощь по транспортировке дорогостоящего обрабатывающего центра с ЧПУ:   от разработки ППР, организации логистики  до такелажно-монтажных работ- все выполнено аккуратно и быстро, с учетом всех особенностей оборудования.</p>
+                            <p>За период нашего взаимодействия они проявили себя как надежные деловые партнеры, способные добросовестно выполнять условия договора.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
                 </button>
             </div>
         </div>

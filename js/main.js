@@ -111,13 +111,15 @@ sliderServicesNavContainer.addEventListener('click', (e) => {
     serviceSlideHandle()
 
     if (e.target.classList.contains('dot')) {
-        servicesSlides.classList.remove('remove-animation')
+        serviceSlider.classList.remove('remove-animation')
+
+        console.log(activeReviewsSlide)
 
         if (!e.target.classList.contains('active')) {
             sliderServicesNavContainer.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'))
             e.target.classList.add('active')
             activeServicesSlide = +e.target.dataset.goSlide + 8;
-            servicesSlides.style.transform = `translate3d(calc(-${serviceColumnSize}px * ${activeServicesSlide}), 0, 0)`
+            serviceSlider.style.transform = `translate3d(calc(-${serviceColumnSize}px * ${activeServicesSlide}), 0, 0)`
         }
     }
 })
@@ -168,22 +170,59 @@ if ((('ontouchstart' in window) ||
     })
 }
 
+const reviewsSlides = reviewsSlider.querySelectorAll('.item-container')
+let reviewColumnSize = reviewsSlides[0].offsetWidth
+
+sliderReviewsNavContainer.addEventListener('click', (e) => {
+    let currentElement = e.target.closest('.btn-arr')
+
+    if (currentElement?.tagName === 'BUTTON') {
+        if (currentElement.dataset.direction === 'next') {
+            activeReviewsSlide++
+        } else if (currentElement.dataset.direction === 'prev') {
+            activeReviewsSlide--
+        } else {
+            return
+        }
+    }
+
+    reviewsSlideHandle()
+
+    if (e.target.classList.contains('dot')) {
+        reviewsSlider.classList.remove('remove-animation')
+
+        if (!e.target.classList.contains('active')) {
+            sliderReviewsNavContainer.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'))
+            e.target.classList.add('active')
+            activeReviewsSlide = +e.target.dataset.goSlide + 4;
+            reviewsSlider.style.transform = `translate3d(calc(-${reviewColumnSize}px * ${activeReviewsSlide}), 0, 0)`
+        }
+    }
+})
 
 function reviewsSlideHandle() {
-    if (activeServicesSlide === 18 || activeServicesSlide === 0) {
-        serviceSlider.style.transform = `translate3d(calc(-${serviceColumnSize}px * ${activeServicesSlide}), 0, 0)`
-        activeServicesSlide = serviceSlider.dataset.slidesCount
+    if (activeReviewsSlide === 10 || activeReviewsSlide === 0) {
+        reviewsSlider.style.transform = `translate3d(calc(-${reviewColumnSize}px * ${activeReviewsSlide}), 0, 0)`
+        activeReviewsSlide = reviewsSlider.dataset.slidesCount
         setTimeout(() => {
-            serviceSlider.classList.add('remove-animation')
-            serviceSlider.style.transform = `translate3d(calc(-${serviceColumnSize}px * ${activeServicesSlide}), 0, 0)`
+            reviewsSlider.classList.add('remove-animation')
+            reviewsSlider.style.transform = `translate3d(calc(-${reviewColumnSize}px * ${activeReviewsSlide}), 0, 0)`
         }, 300)
 
     } else {
-        serviceSlider.classList.remove('remove-animation')
-        serviceSlider.style.transform = `translate3d(calc(-${serviceColumnSize}px * ${activeServicesSlide}), 0, 0)`
+        reviewsSlider.classList.remove('remove-animation')
+        reviewsSlider.style.transform = `translate3d(calc(-${reviewColumnSize}px * ${activeReviewsSlide}), 0, 0)`
     }
 
-    sliderServicesNavContainer.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'))
-    const activeServiceDot = activeServicesSlide < +serviceSlider.dataset.slidesCount ? 1 + activeServicesSlide : activeServicesSlide - (+serviceSlider.dataset.slidesCount - 1)
-    sliderServicesNavContainer.querySelector(`.dot[data-go-slide="${activeServiceDot}"]`).classList.add('active')
+    sliderReviewsNavContainer.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'))
+    const activeReviewDot = activeReviewsSlide < +reviewsSlider.dataset.slidesCount ? 1 + activeReviewsSlide : activeReviewsSlide - (+reviewsSlider.dataset.slidesCount - 1)
+    console.log(activeReviewDot)
+    sliderReviewsNavContainer.querySelector(`.dot[data-go-slide="${activeReviewDot}"]`).classList.add('active')
 }
+
+const reviewsToggler = document.querySelector('#reviews-toggler')
+const reviewsContainer = document.querySelector('#reviews-test')
+
+reviewsToggler.addEventListener('click', () => {
+    reviewsContainer.classList.toggle('show-alt')
+})
