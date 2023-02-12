@@ -510,12 +510,17 @@ a:hover svg {
 #reviews-test .container {
   overflow: hidden;
 }
-#reviews-test.show-alt .slider-container,
-#reviews-test.show-alt .slider-navigation {
+#reviews-test.show-alt .slider-container[data-slider-name=reviews] {
   display: none;
 }
-#reviews-test.show-alt #carouselExampleCaptions {
-  display: block;
+#reviews-test.show-alt .slider-container[data-slider-name=reviews] + .slider-navigation {
+  display: none;
+}
+#reviews-test.show-alt .slider-container[data-slider-name=reviews-new] {
+  display: flex;
+}
+#reviews-test.show-alt .slider-container[data-slider-name=reviews-new] + .slider-navigation {
+  display: flex;
 }
 
 .slider-container:not(.remove-animation) > div {
@@ -526,13 +531,22 @@ a:hover svg {
   transform: translate3d(-900%, 0, 0);
 }
 
-.slider-container[data-slider-name=reviews] {
+.slider-container[data-slider-name=reviews],
+.slider-container[data-slider-name=reviews-new] {
   transform: translate3d(-500%, 0, 0);
 }
+
 @media (min-width: 768px) {
   .slider-container[data-slider-name=reviews] {
     transform: translate3d(-166.66666665%, 0, 0);
   }
+}
+
+.slider-container[data-slider-name=reviews-new] {
+  display: none;
+}
+.slider-container[data-slider-name=reviews-new] + .slider-navigation {
+  display: none;
 }
 
 .slider-container {
@@ -546,6 +560,24 @@ a:hover svg {
   background-color: #373d45;
   padding: 20px 20px 30px;
   flex-shrink: 1;
+}
+
+.review-image {
+  width: 300px;
+  flex-shrink: 0;
+  padding-right: 30px;
+}
+.review-image img {
+  max-width: 100%;
+  max-height: 430px;
+  border: 4px solid #ffd83c;
+  padding: 5px;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .review-image {
+    display: none;
+  }
 }
 
 .review-author {
@@ -564,6 +596,10 @@ a:hover svg {
 .review-text {
   color: #bdbdbd;
   line-height: 24px;
+  align-self: center;
+}
+.review-text .heading {
+  margin-bottom: 30px;
 }
 
 .buttons-container {
@@ -623,36 +659,6 @@ a:hover svg {
   }
 }
 .dot.active {
-  background-color: #ffd83c;
-}
-
-#carouselExampleCaptions {
-  display: none;
-  padding-bottom: 50px;
-}
-#carouselExampleCaptions .carousel-inner .carousel-item > div {
-  display: block;
-}
-#carouselExampleCaptions .carousel-item img {
-  max-width: 100%;
-  max-height: 350px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  display: none;
-}
-@media (min-width: 768px) {
-  #carouselExampleCaptions .carousel-item img {
-    display: unset;
-  }
-}
-#carouselExampleCaptions .carousel-caption {
-  position: unset;
-  text-align: left;
-}
-#carouselExampleCaptions .carousel-indicators {
-  bottom: 0;
-}
-#carouselExampleCaptions .carousel-indicators [data-bs-target] {
   background-color: #ffd83c;
 }
 
