@@ -115,11 +115,4 @@ window.addEventListener('resize', () => {
     sliders.forEach(slider => slideHandle(slider))
 })
 
-const reviewsToggler = document.querySelector('#reviews-toggler')
-const reviewsContainer = document.querySelector('#reviews-test')
-
-reviewsToggler.addEventListener('click', () => {
-    reviewsContainer.classList.toggle('show-alt')
-})
-
 const lightbox = GLightbox()

@@ -523,24 +523,6 @@ a:hover {
     .container {
         overflow: hidden;
     }
-
-    &.show-alt {
-        .slider-container[data-slider-name="reviews"] {
-            display: none;
-
-            & + .slider-navigation {
-                display: none;
-            }
-        }
-
-        .slider-container[data-slider-name="reviews-new"] {
-            display: flex;
-
-            & + .slider-navigation {
-                display: flex;
-            }
-        }
-    }
 }
 
 .slider-container {
@@ -553,23 +535,8 @@ a:hover {
     transform: translate3d(calc(-100% * 9), 0, 0);
 }
 
-.slider-container[data-slider-name="reviews"],
 .slider-container[data-slider-name="reviews-new"] {
     transform: translate3d(calc(-100% * 5), 0, 0);
-}
-
-.slider-container[data-slider-name="reviews"] {
-    @media (min-width: 768px) {
-        transform: translate3d(calc(-33.33333333% * 5), 0, 0);
-    }
-}
-
-.slider-container[data-slider-name="reviews-new"] {
-    display: none;
-
-    & + .slider-navigation {
-        display: none;
-    }
 }
 
 .slider-container {
