@@ -79,7 +79,7 @@ sliderContainers.forEach(slider => {
         if (e.target.classList.contains('dot')) {
             slider.classList.remove('remove-animation')
 
-            
+
             if (!e.target.classList.contains('active')) {
                 slider.parentElement.querySelector(`.slider-navigation[data-slider-target="${slider.dataset.sliderName}"]`).querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'))
                 e.target.classList.add('active')
@@ -114,5 +114,9 @@ function slideHandle(sliderObj) {
 window.addEventListener('resize', () => {
     sliders.forEach(slider => slideHandle(slider))
 })
+
+document.addEventListener('touchmove', function (event) {
+    if (event.scale !== 1) { event.preventDefault(); }
+}, false)
 
 const lightbox = GLightbox()
