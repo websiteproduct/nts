@@ -1,4 +1,4 @@
-$lgray: #373d45;
+$lgray: #fff;
 $dgray: #2b3038;
 $primary-color: #ffd83c;
 
@@ -52,7 +52,8 @@ a:hover {
 
 .heading {
     margin-bottom: 25px;
-    color: $primary-color;
+    // color: $primary-color;
+    color: #000;
 
     @media (min-width: 1024px) {
         margin-bottom: 50px;
@@ -124,7 +125,7 @@ a:hover {
 .header {
     background-color: $lgray;
     padding: 30px 0;
-    color: #fff;
+    // color: #fff;
 }
 
 .header-container {
@@ -136,11 +137,11 @@ a:hover {
 
 .logo {
     img {
-        width: 400px;
+        width: 450px;
         max-width: 100%;
 
         @media (min-width: 1024px) {
-            max-width: 80%;
+            max-width: 90%;
         }
     }
 
@@ -155,7 +156,8 @@ a:hover {
     gap: 25px;
 
     a {
-        color: $primary-color;
+        // color: $primary-color;
+        color: #000;
     }
 
     @media (min-width: 1024px) {
@@ -172,7 +174,8 @@ a:hover {
 
 .contact-icon {
     svg {
-        fill: $primary-color;
+        // fill: $primary-color;
+        fill: #000;
         width: 16px;
     }
 }
@@ -185,7 +188,8 @@ a:hover {
 
 .phone-icon {
     svg {
-        fill: $primary-color;
+        // fill: $primary-color;
+        fill: #000;
         width: 64px;
         height: 64px;
     }
@@ -198,7 +202,8 @@ a:hover {
     gap: 15px;
 
     svg {
-        fill: #e0e0e0;
+        // fill: #e0e0e0;
+        fill: #3b3b3b;
         width: 16px;
         height: 16px;
     }
@@ -206,7 +211,8 @@ a:hover {
 
 .social-icon-link:hover {
     svg {
-        fill: $primary-color;
+        // fill: $primary-color;
+        fill: #000;
     }
 }
 
@@ -215,7 +221,8 @@ a:hover {
 }
 
 .header-contacts .header-phone-link {
-    color: #fff;
+    // color: #fff;
+    color: #000;
 }
 
 .phones div:not(:last-child) {
@@ -305,6 +312,7 @@ a:hover {
     @extend .h-font;
     font-size: 1.875rem;
     color: #f2f2f2;
+    // color: #000;
     line-height: 1.875rem;
     margin-bottom: 30px;
     font-weight: 400;
@@ -350,7 +358,8 @@ a:hover {
 #services,
 #about-us,
 .footer {
-    background-color: $lgray;
+    // background-color: $lgray;
+    background-color: #e3e3e3;
 }
 
 #services .container {
@@ -368,7 +377,8 @@ a:hover {
 }
 
 .about-intro {
-    color: #f2f2f2;
+    // color: #f2f2f2;
+    color: #000;
     font-weight: 500;
     font-size: 1.175rem;
     margin-bottom: 30px;
@@ -381,7 +391,7 @@ a:hover {
 
 .about-text {
     font-size: 1rem;
-    color: #e0e0e0;
+    color: #3b3b3b;
     line-height: 28px;
 
     p:not(:last-child) {
@@ -548,9 +558,13 @@ a:hover {
 }
 
 .review-item {
-    background-color: $lgray;
+    // background-color: $lgray;
     padding: 20px 20px 30px;
     flex-shrink: 1;
+
+    .heading h4 {
+        color: #fff;
+    }
 }
 
 .review-image {
@@ -656,7 +670,8 @@ a:hover {
 }
 
 .footer {
-    color: #bdbdbd;
+    color: #000;
+    background-color: #fff !important;
 }
 
 .footer-container {
@@ -714,13 +729,13 @@ a:hover {
 .social-link {
     display: flex;
     align-items: center;
-    color: #fff;
+    color: #000;
 
     svg {
         width: 16px;
         height: 16px;
         margin-right: 15px;
-        fill: #fff;
+        fill: #3b3b3b;
     }
 
     &:hover {
@@ -739,7 +754,8 @@ a:hover {
 .footer-company-title {
     font-size: 22px;
     font-weight: 500;
-    color: $primary-color;
+    // color: $primary-color;
+    color: #000;
     margin-bottom: 10px;
 }
 
@@ -747,14 +763,15 @@ a:hover {
     text-align: center;
 
     a {
-        color: $primary-color;
+        // color: $primary-color;
+        color: #000;
     }
 
     .contact-link {
-        color: #bdbdbd;
+        color: #3b3b3b;
 
         &:hover {
-            color: #fff;
+            color: #000;
         }
     }
 
@@ -768,13 +785,13 @@ a:hover {
 }
 
 .main-goal {
-    color: #fff;
+    color: #3b3b3b;
     margin-bottom: 20px;
 }
 
 .copyright {
     font-size: 14px;
-    color: #c9c9c9;
+    color: #000;
 
     a {
         color: inherit;

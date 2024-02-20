@@ -51,7 +51,7 @@ a:hover svg {
 
 .heading {
   margin-bottom: 25px;
-  color: #ffd83c;
+  color: #000;
 }
 @media (min-width: 1024px) {
   .heading {
@@ -124,9 +124,8 @@ a:hover svg {
 }
 
 .header {
-  background-color: #373d45;
+  background-color: #fff;
   padding: 30px 0;
-  color: #fff;
 }
 
 .header-container {
@@ -137,12 +136,12 @@ a:hover svg {
 }
 
 .logo img {
-  width: 400px;
+  width: 450px;
   max-width: 100%;
 }
 @media (min-width: 1024px) {
   .logo img {
-    max-width: 80%;
+    max-width: 90%;
   }
 }
 .logo svg {
@@ -155,7 +154,7 @@ a:hover svg {
   gap: 25px;
 }
 .header-contacts a {
-  color: #ffd83c;
+  color: #000;
 }
 @media (min-width: 1024px) {
   .header-contacts {
@@ -171,7 +170,7 @@ a:hover svg {
 }
 
 .contact-icon svg {
-  fill: #ffd83c;
+  fill: #000;
   width: 16px;
 }
 
@@ -182,7 +181,7 @@ a:hover svg {
 }
 
 .phone-icon svg {
-  fill: #ffd83c;
+  fill: #000;
   width: 64px;
   height: 64px;
 }
@@ -194,13 +193,13 @@ a:hover svg {
   gap: 15px;
 }
 .header-social-icons svg {
-  fill: #e0e0e0;
+  fill: #3b3b3b;
   width: 16px;
   height: 16px;
 }
 
 .social-icon-link:hover svg {
-  fill: #ffd83c;
+  fill: #000;
 }
 
 .phones-container {
@@ -208,7 +207,7 @@ a:hover svg {
 }
 
 .header-contacts .header-phone-link {
-  color: #fff;
+  color: #000;
 }
 
 .phones div:not(:last-child) {
@@ -340,7 +339,7 @@ a:hover svg {
 #services,
 #about-us,
 .footer {
-  background-color: #373d45;
+  background-color: #e3e3e3;
 }
 
 #services .container {
@@ -357,7 +356,7 @@ a:hover svg {
 }
 
 .about-intro {
-  color: #f2f2f2;
+  color: #000;
   font-weight: 500;
   font-size: 1.175rem;
   margin-bottom: 30px;
@@ -371,7 +370,7 @@ a:hover svg {
 
 .about-text {
   font-size: 1rem;
-  color: #e0e0e0;
+  color: #3b3b3b;
   line-height: 28px;
 }
 .about-text p:not(:last-child) {
@@ -531,9 +530,11 @@ a:hover svg {
 }
 
 .review-item {
-  background-color: #373d45;
   padding: 20px 20px 30px;
   flex-shrink: 1;
+}
+.review-item .heading h4 {
+  color: #fff;
 }
 
 .review-image {
@@ -641,7 +642,8 @@ a:hover svg {
 }
 
 .footer {
-  color: #bdbdbd;
+  color: #000;
+  background-color: #fff !important;
 }
 
 .footer-container {
@@ -704,13 +706,13 @@ a:hover svg {
 .social-link {
   display: flex;
   align-items: center;
-  color: #fff;
+  color: #000;
 }
 .social-link svg {
   width: 16px;
   height: 16px;
   margin-right: 15px;
-  fill: #fff;
+  fill: #3b3b3b;
 }
 .social-link:hover {
   color: #ffd83c;
@@ -726,7 +728,7 @@ a:hover svg {
 .footer-company-title {
   font-size: 22px;
   font-weight: 500;
-  color: #ffd83c;
+  color: #000;
   margin-bottom: 10px;
 }
 
@@ -734,13 +736,13 @@ a:hover svg {
   text-align: center;
 }
 .footer-contacts a {
-  color: #ffd83c;
+  color: #000;
 }
 .footer-contacts .contact-link {
-  color: #bdbdbd;
+  color: #3b3b3b;
 }
 .footer-contacts .contact-link:hover {
-  color: #fff;
+  color: #000;
 }
 .footer-contacts div {
   margin-bottom: 10px;
@@ -752,13 +754,13 @@ a:hover svg {
 }
 
 .main-goal {
-  color: #fff;
+  color: #3b3b3b;
   margin-bottom: 20px;
 }
 
 .copyright {
   font-size: 14px;
-  color: #c9c9c9;
+  color: #000;
 }
 .copyright a {
   color: inherit;
@@ -776,8 +778,7 @@ a:hover svg {
   }
 }
 .animate__slow_nts {
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  animation-duration: 1.5s;
 }
 
 @media only screen and (max-width: 768px) {
@@ -787,7 +788,6 @@ a:hover svg {
     /*CSS transforms*/
     transform: none !important;
     /*CSS animations*/
-    -webkit-animation: none !important;
     animation: none !important;
   }
 }
@@ -809,11 +809,11 @@ a:hover svg {
 /* medium and up screens */
 @media (min-width: 768px) {
   .carousel-inner .carousel-item-end.active,
-.carousel-inner .carousel-item-next {
+  .carousel-inner .carousel-item-next {
     transform: translateX(25%);
   }
   .carousel-inner .carousel-item-start.active,
-.carousel-inner .carousel-item-prev {
+  .carousel-inner .carousel-item-prev {
     transform: translateX(-25%);
   }
 }
